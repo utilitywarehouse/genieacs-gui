@@ -4,8 +4,10 @@ OUI: InternetGatewayDevice.DeviceInfo.ManufacturerOUI
 Manufacturer: InternetGatewayDevice.DeviceInfo.Manufacturer
 Hardware version: InternetGatewayDevice.DeviceInfo.HardwareVersion
 Software version: InternetGatewayDevice.DeviceInfo.SoftwareVersion
-MAC: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.1.MACAddress
-IP: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.1.ExternalIPAddress
+WANConnectionDevice.1.WANIPConnection.1.MACAddress: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.1.MACAddress
+WANConnectionDevice.2.WANPPPConnection.1.MACAddress: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.MACAddress
+WANConnectionDevice.1.WANIPConnection.1.ExternalIPAddress: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.1.ExternalIPAddress
+WANConnectionDevice.2.WANIPConnection.1.ExternalIPAddress: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.ExternalIPAddress
 WLAN SSID: InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.SSID
 WLAN passphrase: InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.KeyPassphrase
 Hosts:
