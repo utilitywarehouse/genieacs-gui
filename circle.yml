@@ -1,0 +1,30 @@
+machine:
+  services:
+    - docker
+database:
+  override:
+    - echo "db runs in container"
+dependencies:
+  override:
+    - echo "deps run in container"
+  pre:
+    - docker login -e none@none.com -u ${DOCKER_USER} -p ${DOCKER_PASS} registry.uw.systems
+
+test:
+  override:
+    - echo "tests run in container"
+
+deployment:
+  master:
+    branch:
+      - master
+    commands:
+    - docker build --rm=false -t registry.uw.systems/telecom/genieacs-gui:$CIRCLE_SHA1 .
+    - docker tag registry.uw.systems/telecom/genieacs-gui:$CIRCLE_SHA1 registry.uw.systems/telecom/genieacs-gui:latest
+    - docker push registry.uw.systems/telecom/genieacs-gui
+  any:
+    branch:
+      - /^(?!master$).*$/
+    commands:
+    - docker build --rm=false -t registry.uw.systems/telecom/genieacs-gui:$CIRCLE_SHA1 .
+    - docker push registry.uw.systems/telecom/genieacs-gui
