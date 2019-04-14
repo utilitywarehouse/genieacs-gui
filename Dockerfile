@@ -1,8 +1,5 @@
-FROM rails:latest
+FROM rails:5
 
-ARG GITHUB_TOKEN
-
-RUN apt-get update
 RUN gem install rdoc bundle
 RUN mkdir -p /build/genieacs-gui
 
